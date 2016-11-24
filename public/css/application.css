@@ -7,3 +7,44 @@
 th {
   text-align: left;
 }
+
+body{
+  min-width: 800px;
+}
+
+.top {
+  height: 250px;
+  width: 100%;
+  min-width: 1250px;
+  background-size: cover;
+  background-image: url("/header.jpg")
+}
+
+img {
+  margin-top: 0px;
+  height: 100%;
+  width: 20%;
+}
+
+ul {
+  float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    margin-top: 0;
+    float: right;
+}
+
+li a {
+    margin-top: 0px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
