@@ -20,13 +20,32 @@
 </head>
 <body>
   <header class="top">
-       <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#news">Your Questions</a></li>
-      <li><a class="active" href="/">Home</a></li>
-    </ul>
-    <img src="/DBC.png" >
 
+    <img src="/DBC.png" >
+       <ul class="clear">
+          <li><a class="active" href="/">Home</a></li>
+      <li><a href="#news">Your Questions</a></li>
+  <% if ongoing_session %>
+    <li>
+      <div id="loggingout"><a id="lglink" href="#home">Sign Out</a>
+        <span id="logout">
+            <form action="/sessions" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <button type="submit">Log Out</button>
+            </form>
+         </span>
+       </div>
+     </li>
+  <% else %>
+          <li><div id="loggingin"><a id="lginlink" href="#home">Sign in</a><span id="login">
+        <form action="/sessions" method="post">
+          <input type="text" name="user[username]" value="username">
+          <input type="password" name="user[password]" value="password">
+          <button type="submit">Log in</button>
+        </form>
+      </span></div></li>
+  <% end %>
+    </ul>
   </header>
 
   <%= yield %>
